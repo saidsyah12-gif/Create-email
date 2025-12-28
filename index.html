@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Area</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <main id="login-page">
+        <div class="login-container">
+            <div class="profile-icon">
+                <img src="logo.jpg" alt="Profile Logo">
+            </div>
+            <h2>CREATE EMAIL.id</h2>
+            <p>👇Login dengan akun anda👇</p>
+            <form id="login-form">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="username" placeholder="Username" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" placeholder="Password" required>
+                    <i class="fas fa-eye-slash" id="togglePassword"></i>
+                </div>
+                <button type="submit">LOGIN</button>
+            </form>
+            <p>Belum Punya Akun? Buy Lah Dexx💸</p>
+            <a href="https://t.me/Fonx14"target="_blank">Beli Akun</a>
+              
+            </a></div>
+            <div id="error-message" class="error-message">
+              <center>
+                <p><strong>⚠️ WARNING ⚠️</strong><br>Username/Password Anda salah.</p>
+                <p>Jika Anda belum mempunyai akun, silahkan hubungi: <a href="https://t.me/Fonx14" target="_blank">@Fonx14 (Telegram)</a></p>
+                <h1>🤪COBA LAGI DEXX🤪</h1>
+            </div>
+        </div>
+    </main>
+<center>
+    <main id="success-page" class="hidden">
+        <div class="success-container">
+            <div class="account-info">
+                <h3>INFO AKUN ANDA</h3>
+                <p><strong>Username:</strong> <span id="info-username"></span></p>
+                <p><strong>Password:</strong> <span id="info-password"></span></p>
+                <p><strong>Tanggal Login:</strong> <span id="info-date"></span></p>
+            </div>
+            KLIK TOMBOL UNTUK CRATE
+            <a href="https://accounts.google.com/signup?need_sec_link=1&sec_link_scene=im" target="_blank" class="create-email-btn">🤖 CREATE EMAIL 🤖</a>
+            <p class="limit-note">NOTE: CREATE EMAIL MEMILIKI LIMIT. JIKA ANDA TERKENA LIMIT, TUNGGU 24 JAM.</p>
+            <div class="marquee-container"><p class="marquee">TRIMAKASIH TELAH MEMBELI</p></div>
+            </center>
+        </div>
+    </main>
+    
+    <main id="admin-page" class="hidden">
+        <div class="admin-container">
+          <div class="profile-icon">
+                <img src="logo.jpg" alt="Profile Logo">
+            </div>
+            <h2>👑 Admin Panel 👑</h2>
+            <p>Selamat datang, Admin. Anda memiliki kontrol penuh.</p>
+            <div class="admin-features">
+                <button id="show-create-user-modal">👤CREATE AKUN</button>
+                <button id="show-user-db-modal">🔒DATA USER</button>
+                <button id="show-change-link-modal">🌐UBAH GRUP TELE</button>
+                 <div class="marquee-container"><p class="marquee">🚀SEDZ OWNER🚀</p>
+                 <p>⚠️GUNAKAN ADMIN PANEL SE WAJAR NYA!!!⚠️</p>
+            </div>
+            <div id="admin-info-box"></div>
+        </div>
+    </main>
+
+    <div id="create-user-modal" class="modal-backdrop hidden">
+        <div class="modal-content">
+            <span class="close-modal-btn">&times;</span>
+            <center>
+            <h3>👇BUAT AKUN DI SINI👇</h3>
+            <form id="create-user-form">
+                <div class="input-group"><i class="fas fa-user-plus"></i><input type="text" id="new-username" placeholder="Username Baru" required></div>
+                <div class="input-group"><i class="fas fa-key"></i><input type="text" id="new-password" placeholder="Password Baru" required></div>
+                <button type="submit" class="button">👤BUAT AKUN👤</button>
+            </form>
+            <p id="create-user-msg"></p>
+        </div>
+    </div>
+
+    <div id="user-db-modal" class="modal-backdrop hidden">
+        <div class="modal-content">
+            <span class="close-modal-btn">&times;</span>
+            <h3><i class="fas fa-database"></i> Database User</h3>
+            <div id="user-list-container">
+                </div>
+        </div>
+    </div>
+
+    <div id="change-link-modal" class="modal-backdrop hidden">
+        <div class="modal-content">
+            <span class="close-modal-btn">&times;</span>
+            <center>
+            <h3><i class="fab fa-telegram-plane"></i>🌐 GANTI GRUP TELEGRAM 🌐</h3>
+            <form id="change-link-form">
+                <div class="input-group">
+                    <i class="fas fa-link"></i>
+                    <input type="url" id="new-telegram-link" placeholder="https://t.me/namagrupbaru" required>
+                </div>
+                <button type="submit" class="button">📥SIMPAN LINK GRUP📥</button>
+            </form>
+            <p id="change-link-msg"></p>
+        </div>
+    </div>
+
+    <a href="https://t.me/Fonx14" target="_blank" class="cs-button"><i class="fab fa-telegram-plane"></i></a>
+    <div class="settings-menu">
+        <button id="settings-toggle" class="settings-toggle"><i class="fas fa-bars"></i></button>
+        <div id="settings-dropdown" class="settings-dropdown hidden">
+          <center>
+            <h1>🛠️SETING🛠️</h1>
+            <a href="#" id="lang-en">•INGGRIS 🇬🇧</a>
+            <a href="#" id="lang-id">•INDONESIA 🇮🇩</a>
+            <div class="user-count">•PENGGUNA: <span id="visitor-count">0</span> 🟢</div>
+            <a href="#" id="group-link" target="_blank">•GRUP TELEGRAM🌐</a>
+            <a href="#" id="logout-btn">•LOG OUT➡️</a>
+ <div class="marquee-container"><p class="marquee">🌟CREATE EMAIL.id🌟</p></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+  </html>
